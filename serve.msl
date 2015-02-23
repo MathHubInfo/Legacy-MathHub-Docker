@@ -1,0 +1,72 @@
+// This is an MMT script that builds this project. It can be run by checking out MMT at https://svn.kwarc.info/repos/MMT/deploy and running MMT using the shell scripts given there.
+
+//log console
+log file build.log
+//log+ presenter
+//log+ backend
+//log+ controller
+//log+ extman
+//log+ reader
+log+ archive    
+//log+ checker
+//log+ object-checker
+//log+ query
+//log+ catalog
+log+ server
+log+ presenter
+log+ planetary
+log+ steximporter
+//log+ uom
+//log+ abox
+//log+ structure-parser
+//log+ parser
+//log+ scanner
+//log+ lf
+
+
+extension info.kwarc.mmt.planetary.PlanetaryPlugin
+extension info.kwarc.mmt.planetary.PlanetaryPresenter
+extension info.kwarc.mmt.stex.STeXImporter
+
+
+//archive add smglom/algebra
+//archive smglom/algebra relational
+//archive smglom/algebra check
+//archive add smglom/calculus
+//archive smglom/calculus relational
+//archive smglom/calculus check
+//archive add smglom/geometry
+//archive smglom/geometry relational
+//archive smglom/geometry check
+//archive add smglom/graphs
+//archive smglom/graphs relational
+//archive smglom/graphs check
+//archive add smglom/linear-algebra
+//archive smglom/linear-algebra relational
+//archive smglom/linear-algebra check
+archive add smglom/mv
+archive smglom/mv relational
+archive smglom/mv check
+//archive add smglom/numberfields
+//archive smglom/numberfields relational
+//archive smglom/numberfields check
+//archive add smglom/numbers
+//archive smglom/numbers relational
+//archive smglom/numbers check
+//archive add smglom/primes
+//archive smglom/primes relational
+//archive smglom/primes check
+//archive add smglom/sets
+//archive smglom/sets relational
+//archive smglom/sets check
+//archive add smglom/smglom
+//archive smglom/smglom relational
+//archive smglom/smglom check
+//archive add smglom/topology
+//archive smglom/topology relational
+//archive smglom/topology check
+//archive add smglom/trigonometry
+//archive smglom/trigonometry relational
+//archive smglom/trigonometry check
+
+server on 8080

@@ -35,7 +35,27 @@ RUN chmod 777 /var/www/mathhub.info/sites/default/files
 RUN a2enmod rewrite && a2dissite default && a2ensite mathhub.info
 RUN service mysql start; mysql -u root -e "create database mathhub;"
 ADD start-mh /usr/local/bin/
+
 #
-# And run the tail command, to do nothing
+# Setting up basic mathhub stuff (can be overridden locally by mounting folders)
+#
+
+#Installing smglom 
+RUN mkdir ~/.ssh/ && ssh-keyscan gl.mathhub.info > ~/.ssh/known_hosts
+RUN lmh config install::sources "http://gl.mathhub.info/"
+RUN lmh config install::nomanifest true
+RUN lmh install smglom/mv -y; true
+RUN lmh install meta/inf -y; true
+RUN lmh install smglom/meta-inf -y; true
+RUN cd $(lmh root)/MathHub/ && lmh gen --localpaths 
+#RUN cd $(lmh root)/MathHub/ && lmh gen --omdoc
+#RUN #(lmh root)/ext/MMT/mmt $(lmh root)/MathHub/build.msl
+#Adding dictionary info
+ADD dict_data.json ~/localmh/MathHub/
+ADD term_links.json ~/localmh/MathHub/
+
+#
+# And run the tails command, to do nothing
 #
 CMD /bin/bash -c "tail -f /dev/null"
+

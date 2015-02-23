@@ -1,0 +1,127 @@
+// This is an MMT script that builds this project. It can be run by checking out MMT at https://svn.kwarc.info/repos/MMT/deploy and running MMT using the shell scripts given there.
+
+log console
+//log file build.log
+//log+ presenter
+//log+ backend
+//log+ controller
+//log+ extman
+//log+ reader
+log+ archive 
+log+ steximporter
+//log+ checker
+//log+ object-checker
+//log+ query
+//log+ catalog
+//log+ server
+//log+ uom
+//log+ abox
+//log+ structure-parser
+//log+ parser
+//log+ scanner
+//log+ lf
+
+extension info.kwarc.mmt.planetary.PlanetaryPlugin
+extension info.kwarc.mmt.planetary.PlanetaryPresenter
+//extension info.kwarc.mmt.api.archives.GraphViz "/usr/bin/dot"
+extension info.kwarc.mmt.stex.STeXImporter
+extension info.kwarc.mmt.lf.Plugin
+
+
+//archive add MMT/urtheories
+//build MMT/urtheories mmt-omdoc
+//archive urtheories relational
+//build urtheories narration-svg
+
+//archive add HOLLight/basic
+//build HOLLight/basic mmt-omdoc
+//archive HOLLight/basic relational
+//build HOLLight/basic narration-svg
+
+//archive add Mizar/MML
+//build HOLLight/basic mmt-omdoc
+//archive Mizar/MML relational
+//build Mizar/MML narration-svg
+
+//archive add smglom/algebra/
+//archive add smglom/calculus/
+//archive add smglom/geometry/
+//archive add smglom/graphs/
+//archive add smglom/linear-algebra/
+//archive add smglom/magic/
+archive add smglom/mv/
+//archive add smglom/numberfields/
+//archive add smglom/numbers/
+//archive add smglom/primes/
+//archive add smglom/sets/
+//archive add smglom/smglom/
+//archive add smglom/topology/
+//archive add smglom/trigonometry/
+//archive add MMT/urtheories/
+//archive add MMT/examples/
+
+//build MMT/urtheories mmt-omdoc
+//archive MMT/urtheories relational
+//build MMT/urtheories narration-svg
+//build MMT/examples mmt-omdoc 
+//archive MMT/examples relational
+//build MMT/examples narration-svg
+
+//build smglom/algebra stex-omdoc
+//archive smglom/algebra relational
+//build smglom/algebra svg
+//build smglom/algebra planetary
+//build smglom/calculus stex-omdoc
+//archive smglom/calculus relational
+//build smglom/calculus svg
+//build smglom/calculus planetary
+//build smglom/geometry stex-omdoc
+//archive smglom/geometry relational
+//build smglom/geometry svg
+//build smglom/geometry planetary
+//build smglom/graphs stex-omdoc
+//archive smglom/graphs relational
+//build smglom/graphs svg
+//build smglom/graphs planetary
+//build smglom/linear-algebra stex-omdoc
+//archive smglom/linear-algebra relational
+//build smglom/linear-algebra svg
+//build smglom/linear-algebra planetary
+//build smglom/magic stex-omdoc
+//archive smglom/magic relational
+//build smglom/magic svg
+//build smglom/magic planetary
+build smglom/mv stex-omdoc
+archive smglom/mv relational
+//build smglom/mv svg
+build smglom/mv planetary
+//build smglom/numberfields stex-omdoc
+//archive smglom/numberfields relational
+//build smglom/numberfields svg
+//build smglom/numberfields planetary
+//build smglom/numbers stex-omdoc
+//archive smglom/numbers relational
+//build smglom/numbers svg
+//build smglom/numbers planetary
+//build smglom/primes stex-omdoc
+//archive smglom/primes relational
+//build smglom/primes svg
+//build smglom/primes planetary
+//build smglom/sets stex-omdoc
+//archive smglom/sets relational
+//build smglom/sets svg
+//build smglom/sets planetary
+//build smglom/smglom stex-omdoc
+//archive smglom/smglom relational
+//build smglom/smglom svg
+//build smglom/smglom planetary
+//build smglom/topology stex-omdoc
+//archive smglom/topology relational
+//build smglom/topology svg
+//build smglom/topology planetary
+//build smglom/trigonometry stex-omdoc
+//archive smglom/trigonometry relational
+//build smglom/trigonometry svg
+//build smglom/trigonometry planetary
+
+exit
