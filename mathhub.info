@@ -1,0 +1,18 @@
+<Directory /var/www/mathhub.info>
+  RewriteEngine on
+  RewriteBase /
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]
+</Directory>
+
+<VirtualHost *:80>
+  ServerName mathhub
+  DocumentRoot /var/www/mathhub.info
+</VirtualHost>
+
+<Directory /var/www/.ssh/>
+	Options FollowSymLinks
+	AllowOverride None
+	Require all denied
+</Directory>

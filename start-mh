@@ -1,0 +1,5 @@
+#!/bin/bash
+service mysql start
+$(lmh root)/ext/MMT/mmt $(lmh root)/MathHub/serve.msl
+/usr/sbin/apache2ctl -D FOREGROUND
+
