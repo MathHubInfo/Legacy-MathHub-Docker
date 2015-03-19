@@ -12,6 +12,10 @@ For internal configuration/access (i.e. bash)
 For developing on the machine directly while server is active (to see results of changes immediately)
 ```docker run -ti -p 9999:80 kwarc/mathhub start-mhd```
 
+An alternatiev option is to use shared files, and develop on the local machine, e.g.: 
+```docker run -d -p 9999:80 -v ~/MathHub/sites/all/modules/ /var/www/MathHub/sites/all/modules/ kwarc/mathhub start-mh```
+
+
 ## Manual Setup
 Do 
 ```docker build .``` 
