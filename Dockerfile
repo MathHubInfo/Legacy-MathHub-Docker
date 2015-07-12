@@ -25,15 +25,20 @@ ln -s $HOME/localmh/bin/lmh /usr/local/bin/lmh; \
 lmh config env::pdflatex /bin/false; \
 lmh setup --no-firstrun --install all
 #
-# Installing LAMP and MathHub Deps
+# Installing MathHub Deps
 #
+### Installing LAMP
 RUN apt-get install -y mysql-server apache2 php5 php5-mysql libapache2-mod-php5 php5-gd && apt-get clean
+# Cloning Drupal Code
 RUN git clone https://github.com/KWARC/MathHub /var/www/mathhub.info
+# Configuring Apache
 ADD mathhub.info /etc/apache2/sites-available/
 ADD settings.php /var/www/mathhub.info/sites/default/
 RUN chmod 777 /var/www/mathhub.info/sites/default/files
 RUN a2enmod rewrite && a2dissite default && a2ensite mathhub.info
+# Configuring MySQL
 RUN service mysql start; mysql -u root -e "create database mathhub;"
+# Adding run script
 ADD start-mh /usr/local/bin/
 
 #
@@ -48,7 +53,7 @@ RUN lmh install smglom/mv -y; true
 RUN lmh install meta/inf -y; true
 RUN lmh install smglom/meta-inf -y; true
 RUN cd $(lmh root)/MathHub/ && lmh gen --localpaths 
-#RUN cd $(lmh root)/MathHub/ && lmh gen --omdoc
+RUN cd $(lmh root)/MathHub/ && lmh gen --omdoc
 #RUN #(lmh root)/ext/MMT/mmt $(lmh root)/MathHub/build.msl
 #Adding dictionary info
 ADD dict_data.json ~/localmh/MathHub/
