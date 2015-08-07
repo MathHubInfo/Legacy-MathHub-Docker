@@ -15,6 +15,7 @@ For developing on the machine directly while server is active (to see results of
 An alternative option is to use shared files, and develop on the local machine, e.g.: 
 ```docker run -d -p 9999:80 -v ~/MathHub/sites/all/modules/:/var/www/MathHub/sites/all/modules/ kwarc/mathhub start-mh```
 
+The preconfigured administration account is `admin` with default password `admin` (please change the password if making the instance publicly accessible). 
 
 ## Manual Setup
 Do 
