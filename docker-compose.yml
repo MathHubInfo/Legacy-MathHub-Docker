@@ -1,0 +1,27 @@
+version: '3'
+services:
+#  backend:
+#    build: backend
+#    ports:
+#      - 8081:8080
+#    volumes:
+#      - content:/content/
+  frontend:
+    build: frontend
+    ports:
+      - 8080:9000
+    depends_on:
+      - db
+  db:
+    build: db
+    volumes:
+       - dbdata:/var/lib/mysql
+    environment:
+       MYSQL_ROOT_PASSWORD: somemathhub
+       MYSQL_DATABASE: mathhub
+       MYSQL_USER: mathhub
+       MYSQL_PASSWORD: mathhub
+
+volumes:
+  content:
+  dbdata:

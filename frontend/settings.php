@@ -206,9 +206,9 @@ $databases = array (
     'default' => 
     array (
       'database' => 'mathhub',
-      'username' => 'root',
-      'password' => '',
-      'host' => 'localhost',
+      'username' => 'mathhub',
+      'password' => 'mathhub',
+      'host' => 'db',
       'port' => '',
       'driver' => 'mysql',
       'prefix' => '',
