@@ -1,11 +1,11 @@
 version: '3'
 services:
-#  backend:
-#    build: backend
-#    ports:
-#      - 8081:8080
-#    volumes:
-#      - content:/content/
+  backend:
+    build: backend
+    ports:
+      - 8081:8080
+    volumes:
+      - content:/content/
   frontend:
     build: frontend
     ports:
